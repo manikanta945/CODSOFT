@@ -1,0 +1,342 @@
+/* General Styling */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+}
+
+/* Navigation */
+/* Header */
+header {
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(to right, #333, #444); /* Gradient background */
+  color: white; /* White text color */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Logo */
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/* Nav Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 8px 16px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.nav-links li a:hover {
+  background-color: #555; /* Light gray background on hover */
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.hamburger-menu span {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: 0.3s;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* Hide links on smaller screens */
+    flex-direction: column;
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    padding: 20px;
+    border-radius: 0 0 8px 8px;
+  }
+
+  .nav-links li {
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .hamburger-menu {
+    display: flex;
+  }
+}
+
+/* Active Menu State (for mobile) */
+.navbar.active .nav-links {
+  display: flex;
+}
+
+/* Home Section */
+.profile-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 100px 20px; /* Adjusted for fixed header */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.profile-info h1 {
+  font-size: 2.5rem;
+  color: #1a73e8;
+  margin-bottom: 10px;
+}
+
+.username {
+  font-style: italic;
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
+.social-icons img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.social-icons img:hover {
+  transform: scale(1.2);
+}
+
+.profile-image img {
+  width: 300px;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Skills Section */
+.skills-section, .about-section {
+  background: #ffffff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.skills-section h2, .about-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #1a73e8;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.skill-card {
+  background: linear-gradient(to right, #f0f4f8, #e1ebf5);
+  padding: 20px;
+  margin: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  transition: transform 0.3s, background 0.3s;
+  cursor: pointer;
+}
+
+.skill-card:hover {
+  transform: scale(1.05);
+  background: linear-gradient(to right, #e1ebf5, #d1dce4);
+}
+
+/* Projects Section */
+.projects-section {
+  background: #f7f8fa;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.projects-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #1a73e8;
+}
+
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.project-card {
+  background: linear-gradient(to right, #ffffff, #eef2f7);
+  padding: 20px;
+  margin: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: left;
+  cursor: pointer;
+}
+
+.project-card h3 {
+  color: #1a73e8;
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.project-card a {
+  display: inline-block;
+  text-decoration: none;
+  color: #4285f4;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: color 0.3s;
+}
+
+.project-card a:hover {
+  color: #ffd700;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(to right, #eef2f7, #e0e7ee);
+}
+
+/* About Section */
+.about-section {
+  background: linear-gradient(to right, #ffffff, #f9f9f9);
+  padding: 40px 20px;
+  text-align: center;
+  color: #333;
+}
+
+.about-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #1a73e8;
+}
+
+.about-section p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 10px auto;
+  line-height: 1.8;
+  background: #f0f4f8;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease;
+}
+
+.about-section p:hover {
+  background: #e1ebf5;
+}
+
+/* Style for the download button */
+.download-button {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.download-button button {
+  background-color: #4CAF50; /* Green background */
+  color: white; /* White text */
+  padding: 12px 24px; /* Some padding */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Transition for hover effect */
+}
+
+.download-button button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+.download-button button:active {
+  background-color: #3e8e41; /* Even darker on click */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #444; /* Darker background for mobile */
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .hamburger-menu span {
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    margin: 5px 0;
+  }
+
+  .profile-section, .skills-container, .projects-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-image img {
+    width: 200px;
+    margin-top: 20px;
+  }
+
+  .skill-card, .project-card {
+    width: 90%;
+    max-width: 300px;
+  }
+}
